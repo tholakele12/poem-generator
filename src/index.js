@@ -1,7 +1,7 @@
 function displayPoem(response) {
     console.log("poem generated")
     new Typewriter("#poem", {
-    strings: "I love you son Like no one else Only you and I Verified love personified",
+    strings: "I love you son Like no one else Only you and I forever",
     autoStart: true,
     delay: 1,
     cursor: "",
@@ -19,6 +19,9 @@ function generatePoem(event) {
     let prompt=`User instructions: Generate a poem about ${instructionInput}`
     let context="You are learning how to write a short poem for your son. Your mission is to generate a 4 line poem in basic HTML and separate each line with a br/>. Make sure to follow the user instructions."
     let apiUrl=`https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`
+
+    let poemElement=document.querySelector("#poem")
+    poemElement.style.display = "block"
 
     console.log("generating poem")
     console.log(`prompt: ${prompt}`)
